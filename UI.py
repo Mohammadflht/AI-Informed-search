@@ -35,11 +35,6 @@ def draw_numbers(grid):
                 window.blit(number, (j * CELL_SIZE + 20, i * CELL_SIZE + 15))
 
 
-def draw_selected_cell(selected_cell):
-    pygame.draw.rect(window, (0, 128, 255),
-                     (selected_cell[1] * CELL_SIZE, selected_cell[0] * CELL_SIZE, CELL_SIZE, CELL_SIZE), 3)
-
-
 def ui_ai(grid):
     while True:
         for event in pygame.event.get():

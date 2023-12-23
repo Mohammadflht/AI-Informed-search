@@ -173,10 +173,10 @@ class SolveSudoku:
         q = []
         for i, j in self.sud.empty_cells():
             possible_values = len(rows[i] & columns[j] & boxes[(i // 3) * 3 + j // 3])
-            heappush(q, (possible_values, (i, j))) #
+            heappush(q, (possible_values, (i, j)))
 
         if q:
-            return heappop(q)[1] #
+            return heappop(q)[1]
 
     def valid_move(self, cell, n):
         '''
@@ -219,7 +219,7 @@ class SolveSudoku:
                 if self.valid_move(next_empty, i):
                     node = self.sud.copy()
 
-                    node.state[next_empty[0]][next_empty[1]] = i  #
+                    node.state[next_empty[0]][next_empty[1]] = i
                     node.g += 1
                     node.heuristic -= 1
 
@@ -236,7 +236,7 @@ class SolveSudoku:
             print(self.sud)
 
 
-puzzle_name = r"Test Case/1.txt"
+puzzle_name = r"Test Case/4.txt"
 
 if len(puzzle_name) == 0:
     sys.exit("The solution doesn't exist!")
